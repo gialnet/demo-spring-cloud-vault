@@ -2,8 +2,8 @@ spring:
   cloud:
     vault:
       authentication: token
-      token: s.BVyBlqWLZBEWZvtDT4C7W6ij
-      host: 134.209.180.102
+      token: s.BVyBlqWLZBExxx
+      host: 134.209.xxx.xxx
       port: 8200
       scheme: http
       enabled: true
