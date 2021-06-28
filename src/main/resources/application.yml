@@ -1,20 +1,19 @@
 spring:
+  application:
+    name: demo-spring-cloud-vault
   cloud:
     vault:
       authentication: token
-      token: s.BVyBlqWLZBExxx
-      host: 134.209.xxx.xxx
+      token: s.sEqhOP0BD5cVXUtjWf2srkBp
+      host: 134.209.180.102
       port: 8200
       scheme: http
       enabled: true
       kv:
         backend: secret
-       # application-name: demo-spring-cloud-vault
         profile-separator: '/'
         default-context: cc-global
-  application:
-    name: demo-spring-cloud-vault
-spring.config.import: vault://
+spring.config.import: vault://, vault://secret/certificates
 management:
   health:
     vault:
