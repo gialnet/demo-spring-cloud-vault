@@ -20,13 +20,13 @@ public class PropertiesController {
         this.environment = environment;
     }
 
-    @RequestMapping(value = "/ver", method = RequestMethod.GET, produces = {"application/JSON"} )
+    @RequestMapping(value = "/", method = RequestMethod.GET, produces = {"application/JSON"} )
     public ResponseEntity<?> CheckVersion(){
 
         response.clear();
         response.put("version", "Vault 1.7.0 Spring Boot 2.5.1");
         response.put("status", "spring-cloud-starter-vault-config 3.0.3");
-        response.put("data",  "Backend Version 0.1 Release June 2021" );
+        response.put("data",  "Backend Version 0.3 Release June 2021" );
 
         return new ResponseEntity<>(response, HttpStatus.OK);
 

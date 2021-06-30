@@ -38,3 +38,9 @@ docker push localhost:32000/demo-spring-cloud-vault
 docker save demo-spring-cloud-vault > demo.tar
 
 microk8s ctr image import demo.tar
+
+microk8s ctr image ls
+
+docker save demo-spring-cloud-vault:0.0.2-SNAPSHOT > demo2.tar
+
+microk8s ctr image import demo2.tar
