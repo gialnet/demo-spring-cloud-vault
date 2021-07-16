@@ -18,3 +18,5 @@ management:
   health:
     vault:
       enabled: true
+
+PropertyCamino: ${camino}
