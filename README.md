@@ -21,26 +21,3 @@ profiles overrides the active profiles for use in the key-value backend
 profile-separator separates the profile name from the context in property sources with profiles
 
 
-mvn compile com.google.cloud.tools:jib-maven-plugin:3.1.1:build -Dimage=demo-spring-cloud-vault
-
-mvn spring-boot:build-image -Dimage=demo-spring-cloud-vault:local
-
-mvn spring-boot:build-image -Dimage=tuxedo:32000/demo-spring-cloud-vault:registry
-
-mvn compile com.google.cloud.tools:jib-maven-plugin:3.1.1:dockerBuild
-
-mvn compile com.google.cloud.tools:jib-maven-plugin:3.1.1:build -Dimage=tuxedo:32000/demo-spring-cloud-vault:registry
-
-docker tag ee2110484242 tuxedo:32000/demo-spring-cloud-vault:registry
-docker push localhost:32000/demo-spring-cloud-vault
-
----
-docker save demo-spring-cloud-vault > demo.tar
-
-microk8s ctr image import demo.tar
-
-microk8s ctr image ls
-
-docker save demo-spring-cloud-vault:0.0.2-SNAPSHOT > demo2.tar
-
-microk8s ctr image import demo2.tar
